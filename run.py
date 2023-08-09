@@ -1,6 +1,21 @@
+"""
+Main file to run the application. 
+"""
+
+"""
+Import libraries/ packages. 
+"""
+import os
+import sys
+import pyinputplus as pyipfrom tabulate import tabulate
+from tabulate import tabulate
 import gspread
 from google.oauth2.service_account import Credentials
+ 
 
+# The scope was inspired by and borrowed from
+# Code Instituet Love Sandwiches project
+# https://github.com/Code-Institute-Solutions/love-sandwiches-p4-sourcecode
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
