@@ -119,30 +119,57 @@ def random_book_picker():
     """
     clear_tmnl()
     print("The Random Book Picker chooses a book at random from the selected category, \n")
-    print ("taking into account the child's expected mental and developmental age. \n")
+    print("taking into account the child's expected mental and developmental age. \n")
     print("Please select a category:\n")
     print(colored(("(1) Early Childhood 0-5 years old"), "green"))
     print(colored(("(2) Middle Childhood 6-8 years old"), "green"))
     print(colored(("(3) Late Childhood 9-11 years old"), "green"))
     print(colored(("(4) Adolescence 12-15 years old"), "green"))
-  
-    
-
     print(colored(("(0) Return to main menu"), "green"))
     
     while True:
-        main_list_ans = input ("\n")
-        if main_list_ans not in ("0"):
+        random_book_picker_ans = input ("\n")
+        if random_book_picker_ans not in ("0", "1", "2", "3", "4"):
             print(colored(("Invalid input. Please try again."), "red"))
         else:
             break
-        print(colored(("Please choose 0 to return to the main menu."), "red"))
+        print(colored(("Please choose from the options listed: option 0 to 4."), "red"))
 
         
-    if main_list_ans == ("0"):
-        welcome_message()  
+    if random_book_picker_ans == ("0"):
+        welcome_message()
+    elif random_book_picker_ans == ("1"):
+        random_early_childhood()
+    #elif random_book_picker_ans == ("2"):
+        #random_middle_childhood()
+    #elif random_book_picker_ans == ("3"):
+        #random_late_childhood()
+    #elif random_book_picker_and == ("4"):
+        #random_adolescence()
+        
+def random_early_childhood():
+    """
+    This function displays a random book from the early childhood category.
+    """ 
+    clear_tmnl()
     
+    #TODO: Complete the code here
     
+    print(colored(("(0) Return to main menu"), "green"))
+    print(colored(("(1) Previous - Random Book Picker "), "green"))	
+    
+    while True:
+        random_early_childhood_ans = input ("\n")
+        if random_early_childhood_ans not in ("0", "1"):
+            print(colored(("Invalid input. Please try again."), "red"))
+        else:
+            break
+        print(colored(("Please choose from the options listed: option 0 to 1."), "red"))
+        
+    if random_early_childhood_ans == ("0"):
+        welcome_message()
+    elif random_early_childhood_ans == ("1"):
+        random_book_picker()
 
 # def search():
 
