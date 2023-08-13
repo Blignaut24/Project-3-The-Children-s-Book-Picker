@@ -30,48 +30,31 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('book_list')
 
 """
-TODO: Delete coded out comment
-"""
-
-#main_list = SHEET.worksheet('main_list')
-
-#complete_list = main_list.get_all_values()
-
-#print(complete_list)
-
-"""
 Global variables for app processes.
 """
 
 """
-Variables for sheet in the spreadsheet.
-TODO: Rewrite use correct gpsread terminology
+Variables for sheet in the worksheet.
 """
 LIST_ALL = SHEET.worksheet('main_list')
 
 
 def welcome_message():
     """
-    Application introduction that explains the purpose of the application 
-        and gives instructions to the user. 
-    TODO: Rewrite comment to avoid plagiarism. 
+    A welcome message that provides the main menu of the application.
     """
     clear_tmnl
     print("Welcome to the Children's Book Picker\n")
     print("Please select an option below.\n")
-    """TODO: Rewrite instruction to avoid plagiarism. """
     print(colored(("(1) List all books"), "green"))
-    print(colored(("(2) Early Childhood 0-5 year olds"), "green"))
-    print(colored(("(3) Middle Childhood 6-8 year olds"), "green"))
-    print(colored(("(4) Late Childhood 9-11 year olds"), "green"))
-    print(colored(("(5) Adolescence 12-14 year olds"), "green"))
-    print(colored(("(6) Search for a book"), "green"))
+    print(colored(("(2) Random Book Picker"), "green"))
+    print(colored(("(3) Search"), "green"))
     
     while True:
         welcome_message_ans = input ("\n")
-        if welcome_message_ans not in ("1", "2", "3", "4", "5"):
+        if welcome_message_ans not in ("1", "2", "3"):
             print ("Invalid input. Please try again.")
-            print ("Please choose an option between 1 and 5.")
+            print ("Please choose an option between 1 and 3.")
         else:
             break
         
@@ -88,58 +71,66 @@ def welcome_message():
     #elif welcome_message_ans == ("6"):
        #search_book ()
         
-def main_list ():
+def main_list (): #FIXME: Change to load_books
     """
     List all books in the spreadsheet. 
     """
     clear_tmnl()
-    all_books = SHEET.worksheet('main_list') #FIXME: Can I keep the name or must it be change to main_list?
+    all_books = SHEET.worksheet('main_list') 
+    headerSpreadsheet = all_books.row_values(1)
+    numberOfBooks = len(all_books.col_values(1))-1
+    numberOfColumns = len(all_books.row_values(1))
+       
     all_rows = []
     for ind in range(1,22): #FIXME: Found out if 22 is the correct number in the spread sheet. 
         all_col = all_books.col_values(ind) #FIXME: ind column name or Python tech?
         all_rows.append(all_col[1: ])
     title = all_rows[0]
     author = all_rows[1]
+   
+    # author =  all_books.col_values(2)     #HK: alternative way to get author, first take all column including header(row1)
+    # author = author[1:]                   #HK: remove row 1 (since it is already in python, we start counting at 0, so we omit 0 and start at 1)
+  
     illustrator = all_rows[2]
     interest_level = all_rows[3]
     reading_age = all_rows[4]
-    synopsis = all_rows[5]
+    reading_stage = all_rows[5]
+    synopsis = all_rows[6]
     
+ 
+    # for row in all_books:
+        # print(row[0])
+      
     print('\n Complete Book List:\n')
     #FIXME: Code snippet
-    all_books = SHEET.worksheet('main_list') #FIXME: Can I keep the name or must it be change to main_list?
-    all_rows = []
-    for ind in range(1,22): #FIXME: Found out if 22 is the correct number in the spread sheet. 
-        all_col = all_books.col_values(ind) #FIXME: ind column name or Python tech?
-        all_rows.append(all_col[1: ])
-    title = all_rows[0]
-    author = all_rows[1]
-    illustrator = all_rows[2]
-    interest_level = all_rows[3]
-    reading_age = all_rows[4]
-    synopsis = all_rows[5]
-    
-    print('\n Complete Book List:\n')
-    #FIXME: Code snippet
-    #for (title, author, illustrator, interest_level, reading_age, synopsis) in zip (title, author, illustrator, interest_level, reading_age, synopsis):
-       #print(f' {title} by {author} by {illustrator} with {interest_level} interest)
-             
-    print('\n Synopsis:\n')
-    for synopsis in synopsis:
-        print(synopsis)
+                
+    print('\n Book Titles:\n')
+    for ind in range(numberOfBooks):
+        print(f"{title[ind]} - {author[ind]}")
         
-        print(colored(("(0) Return to main menu"), "green"))
+    print(colored(("(0) Return to main menu"), "green"))
     
     while True:
         main_list_ans = input ("\n")
         if main_list_ans not in ("0"):
             print(colored(("Invalid input. Please try again."), "red"))
-            print(colored(("Please choose 0 to return to the main menu."), "red"))
         else:
             break
+        print(colored(("Please choose 0 to return to the main menu."), "red"))
+
         
     if main_list_ans == ("0"):
         welcome_message()
+
+#def search_term:
+
+#def early_childhood ():
+"""
+This function selects a random book from the early childhood category and displays its title, author, illustrator, interest level, reading age, and synopsis.
+"""
+#clear_tmnl()
+
+
 
 
      
