@@ -58,7 +58,9 @@ def load_books():
     """
     List all books in the spreadsheet.
     """
-    global headerSpreadsheet, numberOfBooks, numberOfColumns, title, author, illustrator, interest_level, reading_age, reading_stage, synopsis
+    global headerSpreadsheet, numberOfBooks, numberOfColumns, \
+        title, author, illustrator, interest_level, \
+        reading_age, reading_stage, synopsis
     clear_tmnl()
     print("Please wait while books are being loaded...")
 
@@ -167,9 +169,9 @@ def clear_tmnl():
 
 def return_to_begin(running):
     """
-    The `return_to_begin` function
-    shows a message with choices to go back to the main menu
-    or exit the program. After that, it waits for the user to type either `0` to go back to
+    The `return_to_begin` functionshows a message
+    with choices to go back to the main menu or exit the program.
+    After that, it waits for the user to type either `0` to go back to
     the main menu or `x` to exit the program.
     """
     print(colored(("(0) Return to main menu"), "green"))
@@ -181,7 +183,8 @@ def return_to_begin(running):
             print(colored(("Invalid input. Please try again."), "red"))
         else:
             break
-        print(colored(("Please choose 0 to return to the main or x to quit."), "red"))
+        print(colored(("Please choose 0 to return to the main"), "red"))
+        print(colored(("or x to quit."), "red"))
 
     if main_list_ans == ("0"):
         return running
@@ -192,7 +195,8 @@ def return_to_begin(running):
 
 def main():
     """
-    The `main()` function starts the program, loads books, and runs other functions continuously until
+    The `main()` function starts the program,
+    loads books, and runs other functions continuously until
     the user exits using the `return_to_begin()` function.
     """
     load_books()
