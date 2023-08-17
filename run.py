@@ -136,7 +136,7 @@ def random_book_message():
     return random_book_picker_ans
 
 
-def search_string_within_information(search_string, information_to_search_from):
+def search_string_within_info(search_string, information_to_search_from):
     """
     This function looks for a specific word
     or phrase in a list of data
@@ -246,7 +246,7 @@ def loop():
         elif random_book_picker_ans == ("5"):
             searchword = ""
 
-        index_print_list = search_string_within_information(searchword, reading_stage)
+        index_print_list = search_string_within_info(searchword, reading_stage)
         print(index_print_list)
         index_print_list = random_from_index_list(index_print_list)
 
@@ -255,8 +255,8 @@ def loop():
         searchword = input("\n")  # Use input
         print("")
         print(f"Search term is '{searchword}'")
-        index_print_list_title = search_string_within_information(searchword, title)
-        index_print_list_author = search_string_within_information(searchword, author)
+        index_print_list_title = search_string_within_info(searchword, title)
+        index_print_list_author = search_string_within_info(searchword, author)
         index_print_list = index_print_list_title + index_print_list_author
 
     # Selection is made, print all relevant books
