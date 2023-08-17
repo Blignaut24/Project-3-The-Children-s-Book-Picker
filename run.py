@@ -1,9 +1,5 @@
 """
-Main file to run the application. 
-"""
-
-"""
-Import libraries/ packages. 
+Import libraries/ packages.
 """
 import os
 import sys
@@ -11,7 +7,7 @@ import random
 from termcolor import colored
 import gspread
 from google.oauth2.service_account import Credentials
- 
+
 
 # The scope was inspired by and borrowed from
 # Code Instituet Love Sandwiches project
@@ -47,33 +43,34 @@ def welcome_message():
     print(colored(("(1) List all books"), "green"))
     print(colored(("(2) Random Book Picker"), "green"))
     print(colored(("(3) Search"), "green"))
-    
+
     while True:
-        welcome_message_ans = input ("\n")
+        welcome_message_ans = input("\n")
         if welcome_message_ans not in ("1", "2", "3"):
-            print ("Invalid input. Please try again.")
-            print ("Please choose an option between 1 and 3.")
+            print("Invalid input. Please try again.")
+            print("Please choose an option between 1 and 3.")
         else:
             break
     return welcome_message_ans
-        
+
+
 def load_books():
     """
-    List all books in the spreadsheet. 
+    List all books in the spreadsheet.
     """
-    global headerSpreadsheet, numberOfBooks, numberOfColumns,title, author, illustrator, interest_level, reading_age, reading_stage, synopsis
+    global headerSpreadsheet, numberOfBooks, numberOfColumns, title, author, illustrator, interest_level, reading_age, reading_stage, synopsis
     clear_tmnl()
     print("Please wait while books are being loaded...")
-    
-    all_books = SHEET.worksheet('main_list') 
+
+    all_books = SHEET.worksheet('main_list')
     headerSpreadsheet = all_books.row_values(1)
     numberOfBooks = len(all_books.col_values(1))-1
     numberOfColumns = len(all_books.row_values(1))
 
     all_rows = []
-    for ind in range(1,numberOfBooks):
-        all_col = all_books.col_values(ind) 
-        all_rows.append(all_col[1: ])
+    for ind in range(1, numberOfBooks):
+        all_col = all_books.col_values(ind)
+        all_rows.append(all_col[1:])
     title = all_rows[0]
     author = all_rows[1]
     # To get the author, you can choose all the columns, including the header in row 1.
