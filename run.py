@@ -105,7 +105,7 @@ def print_book_list(index_print_list):
             print(f"{title[ind]} - {author[ind]}")
     else:
         print("no results found")
-        
+
 
 def random_book_message():
     """
@@ -123,7 +123,7 @@ def random_book_message():
     print(colored(("(3) Late Childhood 9-11 years old"), "green"))
     print(colored(("(4) Adolescence 12-15 years old"), "green"))
     print(colored(("(5) Any category"), "green"))
-    
+
     while True:
         random_book_picker_ans = input("\n")
         if random_book_picker_ans not in ("1", "2", "3", "4", "5"):
