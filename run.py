@@ -41,7 +41,6 @@ def welcome_message():
     """
     A welcome message that provides the main menu of the application.
     """
-        
     clear_tmnl()
     print("Welcome to the Children's Book Picker\n")
     print("Please select an option below.\n")
@@ -56,7 +55,6 @@ def welcome_message():
             print ("Please choose an option between 1 and 3.")
         else:
             break
-    
     return welcome_message_ans
         
 def load_books():
@@ -87,8 +85,8 @@ def load_books():
     reading_stage = all_rows[5]
     synopsis = all_rows[6]
     
-    print("done loading books.")   
-    
+    print("Done loading books.")
+
 def print_book_list(index_print_list):
     """
     The print_book_list function displays book titles and authors by using a list of indices as input. 
@@ -99,9 +97,9 @@ def print_book_list(index_print_list):
         for ind in index_print_list:
             print(f"{title[ind]} - {author[ind]}")
     else:
-        print("no results found")
+        print("no results found")  
         
-        
+
 def random_book_message():
     """
     This feature lets users pick a book at random from one of four categories: 
@@ -128,7 +126,6 @@ def random_book_message():
 
     return random_book_picker_ans
 
-
 def search_string_within_information(search_string, information_to_search_from):
     """
     This function looks for a specific word or phrase in a list of data and gives you a list of 
@@ -138,7 +135,7 @@ def search_string_within_information(search_string, information_to_search_from):
     for index in range(len(information_to_search_from)):
         if search_string in information_to_search_from[index]:
             index_print_list.append(index)
-    return index_print_list        
+    return index_print_list
 
 def random_from_index_list(index_list):
     """
@@ -155,7 +152,7 @@ def clear_tmnl():
     """
     # (Credited in README.md to Tony118g)
     os.system("clear")
-
+    
 def return_to_begin(running):
     """
     The `return_to_begin` function shows a message with choices to go back to the main menu 
@@ -178,7 +175,8 @@ def return_to_begin(running):
     if main_list_ans == ("x"):
         running = False
         return running
-      
+
+            
 def main ():
     """
     The `main()` function starts the program, loads books, and runs other functions continuously until 
