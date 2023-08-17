@@ -40,7 +40,7 @@ def welcome_message():
     clear_tmnl()
     print("Welcome to the Children's Book Picker\n")
     print("Please select an option below.\n")
-    print(colored(("(1) List all books"), "green"))
+    print(colored(("(1) List All Books"), "green"))
     print(colored(("(2) Random Book Picker"), "green"))
     print(colored(("(3) Search"), "green"))
 
