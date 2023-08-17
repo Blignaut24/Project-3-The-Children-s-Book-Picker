@@ -73,38 +73,47 @@ def load_books():
         all_rows.append(all_col[1:])
     title = all_rows[0]
     author = all_rows[1]
-    # To get the author, you can choose all the columns, including the header in row 1.
-    # To remove the first row in Python, we need to start counting at 0 instead of 1, and 
-    # then remove row 0 according to that count.
+    """
+    To get the author, you can choose all the columns,
+    including the header in row 1.
+    To remove the first row in Python,
+    we need to start counting at 0 instead of 1,
+    and then remove row 0 according to that count.
+    """
     illustrator = all_rows[2]
     interest_level = all_rows[3]
     reading_age = all_rows[4]
     reading_stage = all_rows[5]
     synopsis = all_rows[6]
-    
+
     print("Done loading books.")
+
 
 def print_book_list(index_print_list):
     """
-    The print_book_list function displays book titles and authors by using a list of indices as input. 
-    It shows the book titles on top, and displays a message when there are no results to show.
-    """            
+    The print_book_list function displays book titles
+    and authors by using a list of indices as input.
+    It shows the book titles on top,
+    and displays a message when there are no results to show.
+    """
     print('\n Book Title(s):\n')
     if len(index_print_list) > 0:
         for ind in index_print_list:
             print(f"{title[ind]} - {author[ind]}")
     else:
-        print("no results found")  
-        
+        print("no results found")
+
 
 def random_book_message():
     """
-    This feature lets users pick a book at random from one of four categories: 
+    This feature lets users pick a book at random from one of four categories:
     early childhood, middle childhood, late childhood, and adolescence.
     """
     clear_tmnl()
-    print("The Random Book Picker chooses a book at random from the selected category, \n")
-    print("taking into account the child's expected mental and developmental age. \n")
+    print("The Random Book Picker, \n")
+    print("Chooses a book at random from the selected category, \n")
+    print("Taking into account the child's\n")
+    print("expected mental and developmental age. \n")
     print("Please select a category:\n")
     print(colored(("(1) Early Childhood 0-5 years old"), "green"))
     print(colored(("(2) Middle Childhood 6-8 years old"), "green"))
@@ -112,27 +121,31 @@ def random_book_message():
     print(colored(("(4) Adolescence 12-15 years old"), "green"))
     print(colored(("(5) Any category"), "green"))
     print(colored(("(0) Return to main menu"), "green"))
-    
+
     while True:
-        random_book_picker_ans = input ("\n")
+        random_book_picker_ans = input("\n")
         if random_book_picker_ans not in ("0", "1", "2", "3", "4", "5"):
             print(colored(("Invalid input. Please try again."), "red"))
         else:
             break
-        print(colored(("Please choose from the options listed: option 0 to 4."), "red"))
+        print(colored(("Please choose from the options listed:"), "red"))
+        print(colored(("option 0 to 5."), "red"))
 
     return random_book_picker_ans
 
+
 def search_string_within_information(search_string, information_to_search_from):
     """
-    This function looks for a specific word or phrase in a list of data and gives you a list of 
-    where it was found.
+    This function looks for a specific word
+    or phrase in a list of data
+    and gives you a list of where it was found.
     """
     index_print_list = []
     for index in range(len(information_to_search_from)):
         if search_string in information_to_search_from[index]:
             index_print_list.append(index)
     return index_print_list
+
 
 def random_from_index_list(index_list):
     """
@@ -143,25 +156,28 @@ def random_from_index_list(index_list):
     random_number = [random_number]
     return random_number
 
+
 def clear_tmnl():
     """
     Clears the terminal when called.
     """
     # (Credited in README.md to Tony118g)
     os.system("clear")
-    
+
+
 def return_to_begin(running):
     """
-    The `return_to_begin` function shows a message with choices to go back to the main menu 
-    or exit the program. After that, it waits for the user to type either `0` to go back to 
+    The `return_to_begin` function
+    shows a message with choices to go back to the main menu
+    or exit the program. After that, it waits for the user to type either `0` to go back to
     the main menu or `x` to exit the program.
     """
     print(colored(("(0) Return to main menu"), "green"))
     print(colored(("(x) Quit program"), "red"))
-    
+
     while True:
-        main_list_ans = input ("\n")
-        if main_list_ans not in ("0","x"):
+        main_list_ans = input("\n")
+        if main_list_ans not in ("0", "x"):
             print(colored(("Invalid input. Please try again."), "red"))
         else:
             break
@@ -173,10 +189,10 @@ def return_to_begin(running):
         running = False
         return running
 
-            
-def main ():
+
+def main():
     """
-    The `main()` function starts the program, loads books, and runs other functions continuously until 
+    The `main()` function starts the program, loads books, and runs other functions continuously until
     the user exits using the `return_to_begin()` function.
     """
     load_books()
@@ -185,14 +201,15 @@ def main ():
     """"
     Runs the following functions continuously unless you quit it.
     """
-    
+
     while True:
-        if running!=True:
+        if not running:
             break
         loop()
         running = return_to_begin(running)
 
-def loop(): 
+
+def loop():
     """
     This function is the main loop of the application. It welcomes the user and prompts them to 
     select an option from the main menu. 
