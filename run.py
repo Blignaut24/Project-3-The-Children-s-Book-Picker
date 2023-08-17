@@ -10,7 +10,7 @@ from google.oauth2.service_account import Credentials
 
 
 # The scope was inspired by and borrowed from
-# Code Instituet Love Sandwiches project
+# Code Institute Love Sandwiches project
 # https://github.com/Code-Institute-Solutions/love-sandwiches-p4-sourcecode
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -47,8 +47,8 @@ def welcome_message():
     while True:
         welcome_message_ans = input("\n")
         if welcome_message_ans not in ("1", "2", "3"):
-            print("Invalid input. Please try again.")
-            print("Please choose an option between 1 and 3.")
+            print(colored(("Invalid input. Please try again."), "red"))
+            print(colored(("Please choose an option between 1 and 3."), "red"))
         else:
             break
     return welcome_message_ans
@@ -98,13 +98,14 @@ def print_book_list(index_print_list):
     It shows the book titles on top,
     and displays a message when there are no results to show.
     """
+    clear_tmnl()
     print('\n Book Title(s):\n')
     if len(index_print_list) > 0:
         for ind in index_print_list:
             print(f"{title[ind]} - {author[ind]}")
     else:
         print("no results found")
-
+        
 
 def random_book_message():
     """
@@ -122,16 +123,16 @@ def random_book_message():
     print(colored(("(3) Late Childhood 9-11 years old"), "green"))
     print(colored(("(4) Adolescence 12-15 years old"), "green"))
     print(colored(("(5) Any category"), "green"))
-    print(colored(("(0) Return to main menu"), "green"))
-
+    
     while True:
         random_book_picker_ans = input("\n")
-        if random_book_picker_ans not in ("0", "1", "2", "3", "4", "5"):
-            print(colored(("Invalid input. Please try again."), "red"))
+        if random_book_picker_ans not in ("1", "2", "3", "4", "5"):
+            print(colored(("Invalid input."), "red"))
+            print(colored(("Please try again."), "red"))
         else:
             break
-        print(colored(("Please choose from the options listed:"), "red"))
-        print(colored(("option 0 to 5."), "red"))
+        print(colored(("Choose from the options listed:"), "red"))
+        print(colored(("Option 1 to 5."), "red"))
 
     return random_book_picker_ans
 
@@ -169,7 +170,7 @@ def clear_tmnl():
 
 def return_to_begin(running):
     """
-    The `return_to_begin` functionshows a message
+    The `return_to_begin` function shows a message
     with choices to go back to the main menu or exit the program.
     After that, it waits for the user to type either `0` to go back to
     the main menu or `x` to exit the program.
@@ -180,10 +181,11 @@ def return_to_begin(running):
     while True:
         main_list_ans = input("\n")
         if main_list_ans not in ("0", "x"):
-            print(colored(("Invalid input. Please try again."), "red"))
+            print(colored(("Invalid input."), "red"))
+            print(colored(("Please try again."), "red"))
         else:
             break
-        print(colored(("Please choose 0 to return to the main"), "red"))
+        print(colored(("Choose 0 to return to the main"), "red"))
         print(colored(("or x to quit."), "red"))
 
     if main_list_ans == ("0"):
