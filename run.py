@@ -211,20 +211,23 @@ def main():
 
 def loop():
     """
-    This function is the main loop of the application. It welcomes the user and prompts them to 
-    select an option from the main menu. 
-    Depending on the user's selection, it either prints a complete list of books, selects a random book 
-    from a specific category, or allows the user to search for books by entering a search term.
+    This function is the main loop of the application.
+    It welcomes the user and prompts them to select
+    an option from the main menu.
+    Depending on the user's selection,
+    it either prints a complete list of books,
+    selects a random book from a specific category,
+    or allows the user to search for books by entering a search term.
     It then prints the selected books to the console.
     """
     # Welcome the user to the program
     welcome_message_ans = welcome_message()
-    
+
     # Select the books you want to print
-    if welcome_message_ans == ("1"):            #list all books
+    if welcome_message_ans == ("1"):  # List all books
         index_print_list = range(numberOfBooks)
-        
-    elif welcome_message_ans == ("2"):          #random book picker
+
+    elif welcome_message_ans == ("2"):  # Random book picker
         random_book_picker_ans = random_book_message()
         if random_book_picker_ans == ("0"):
             welcome_message()
@@ -239,20 +242,20 @@ def loop():
         elif random_book_picker_ans == ("5"):
             searchword = ""
 
-        index_print_list = search_string_within_information(searchword,reading_stage)
+        index_print_list = search_string_within_information(searchword, reading_stage)
         print(index_print_list)
         index_print_list = random_from_index_list(index_print_list)
 
-    elif welcome_message_ans == ("3"):      # search for a term in title and author
+    elif welcome_message_ans == ("3"):  # Search for a term in title and author
         print("Type your search term below:")
-        searchword = input ("\n")#use input
+        searchword = input("\n")  # Use input
         print("")
         print(f"Search term is '{searchword}'")
-        index_print_list_title = search_string_within_information(searchword,title) 
-        index_print_list_author = search_string_within_information(searchword,author)
+        index_print_list_title = search_string_within_information(searchword, title)
+        index_print_list_author = search_string_within_information(searchword, author)
         index_print_list = index_print_list_title + index_print_list_author
 
-    # Selection is made, print all relevant books    
+    # Selection is made, print all relevant books
     print_book_list(index_print_list)
 
 
