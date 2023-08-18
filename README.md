@@ -22,7 +22,7 @@ View the live site [here](https://the-childrens-book-picker-024245f82ca0.herokua
 
 Look no further than The Children's Book Picker app! This app provides a list of the best English children's books, based on recommendations from BookTrust, the largest children's reading charity in the UK. You can trust that you're providing your child with the best English literature available. The app allows you to view complete book lists, choose a random book from an age category, or search for a book by title or author.
 
-![](C:\Users\blign\Dropbox\1 PROJECT\CI Portfolio Project 3\images\main_menu_readme.png)
+![screenshot](assets/images/main_menu_readme.png)
 
 ### Site Goals:
 
@@ -55,7 +55,7 @@ For quick, relevant book recommendations and an easy-to-navigate app, try our se
 
 ### Wireframe:
 
-![](C:\Users\blign\Dropbox\1 PROJECT\CI Portfolio Project 3\images\Wireframe.png)
+![screenshot](assets/images/wireframe.png)
 
 ------
 
@@ -65,28 +65,28 @@ For quick, relevant book recommendations and an easy-to-navigate app, try our se
 
 ### Landing Page:
 
-![](C:\Users\blign\Dropbox\1 PROJECT\CI Portfolio Project 3\images\main_menu_readme.png)
+![screenshot](assets/images/main_menu_readme.png)
 
 - All text highlighted in green indicates user options on any given page.
 - All text marked in red indicates either an error message to the user for incorrect input, or the option to exit the program.
 
-![](C:\Users\blign\Dropbox\1 PROJECT\CI Portfolio Project 3\images\error_message_readme.png)
+![screenshot](assets/images/error_message_readme.png)
 
 ### List all Books
 
-![](C:\Users\blign\Dropbox\1 PROJECT\CI Portfolio Project 3\images\book_list_readme.png)
+![screenshot](assets/images/book_list_readme.png)
 
 ### The Random Book Picker
 
-![](C:\Users\blign\Dropbox\1 PROJECT\CI Portfolio Project 3\images\random_bookpicker_menu_readme.png)
+![screenshot](assets/images/random_bookpicker_menu_readme.png)
 
-![](C:\Users\blign\Dropbox\1 PROJECT\CI Portfolio Project 3\images\random_result_readme.png)
+![screenshot](assets/images/random_result_readme.png)
 
 ### Search
 
-![](C:\Users\blign\Dropbox\1 PROJECT\CI Portfolio Project 3\images\search_select_readme.png)
+![screenshot](assets/images/search_select_readme.png)
 
-![](C:\Users\blign\Dropbox\1 PROJECT\CI Portfolio Project 3\images\search_results_readme.png)
+![screenshot](assets/images/search_results_readme.png)
 
 ### **Features Left to Implement**
 
@@ -105,7 +105,7 @@ Note: The Code Institute template (https://github.com/Code-Institute-Org/python-
 
 The code has been tested by using [Code Institute CI Python Linter (Pep8)](https://pep8ci.herokuapp.com/)
 
-![](C:\Users\blign\Dropbox\1 PROJECT\CI Portfolio Project 3\images\testing_pep8_readme.png)
+![screenshot](assets/images/testing_pep8_readme.png)
 
 ### Manual Testing
 
@@ -195,7 +195,7 @@ The deployment of the project was done using [Heroku](https://www.heroku.com/) t
 
 Important: If you want the deployed app to automatically rebuild every time you push to GitHub, you can click on "Enable".
 
-![](C:\Users\blign\Dropbox\1 PROJECT\CI Portfolio Project 3\images\heroku_deployment_readme.png)
+![screenshot](assets/images/heroku_deployment_readme.png)
 
 ### Forking The Repository
 
