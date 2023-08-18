@@ -143,7 +143,6 @@ def search_string_within_info(search_string, information_to_search_from):
     or phrase in a list of data
     and gives you a list of where it was found.
     """
-    clear_tmnl() #FIXME: Fix clear terminal feature for (3) search
     index_print_list = []
     for index in range(len(information_to_search_from)):
         if search_string in information_to_search_from[index]:
