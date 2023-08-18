@@ -7,11 +7,40 @@ The Children's Book Picker is a command-line interface (CLI) data automation pro
 View the live site [here](https://the-childrens-book-picker-024245f82ca0.herokuapp.com/).
 
 ------
+# Table of Content
 
-
-
-[TOC]
-
+- [The Children's Book Picker](#the-childrens-book-picker)
+- [Table of Content](#table-of-content)
+  - [User Experience (UX)](#user-experience-ux)
+    - [Site Purpose](#site-purpose)
+      - [Are you struggling to find high-quality children's books to read to your little ones?](#are-you-struggling-to-find-high-quality-childrens-books-to-read-to-your-little-ones)
+    - [Site Goals:](#site-goals)
+    - [Audience:](#audience)
+    - [Communication:](#communication)
+    - [Current User Goals:](#current-user-goals)
+    - [New User Goals:](#new-user-goals)
+    - [**Future Goals:**](#future-goals)
+  - [Design](#design)
+    - [Wireframe:](#wireframe)
+  - [Features](#features)
+    - [Existing Features:](#existing-features)
+    - [Landing Page:](#landing-page)
+    - [List all Books](#list-all-books)
+    - [The Random Book Picker](#the-random-book-picker)
+    - [Search](#search)
+    - [**Features Left to Implement**](#features-left-to-implement)
+  - [Testing](#testing)
+    - [Validator Testing](#validator-testing)
+    - [Manual Testing](#manual-testing)
+    - [Unfixed Bugs](#unfixed-bugs)
+  - [Technologies Used](#technologies-used)
+    - [Main Languages Used](#main-languages-used)
+  - [Deployment and Development](#deployment-and-development)
+    - [Deploying the App](#deploying-the-app)
+    - [Forking The Repository](#forking-the-repository)
+    - [Cloning The Repository](#cloning-the-repository)
+  - [Credits](#credits)
+  - [Acknowledgements](#acknowledgements)
 ------
 
 ## User Experience (UX)
