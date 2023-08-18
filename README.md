@@ -1,6 +1,6 @@
 # The Children's Book Picker
 
-![screenshot](assets\images\responsive_display_readme.png)
+![screenshot](assets/images/responsive_display_readme.png)
 
 The Children's Book Picker is a command-line interface (CLI) data automation program that runs on a mock terminal in Heroku. The program is designed to assist parents, teachers, and family members in selecting appropriate reading books for children. This program is developed to demonstrate competency in python programming and is purely for educational purposes.
 
